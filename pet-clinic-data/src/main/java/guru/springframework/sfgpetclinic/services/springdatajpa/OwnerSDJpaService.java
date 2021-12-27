@@ -7,7 +7,10 @@ import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -48,7 +51,8 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
-        return ownerRepository.save(object);
+        object=ownerRepository.save(object);
+         return object;
     }
 
     @Override
