@@ -4,6 +4,7 @@ import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
@@ -11,6 +12,7 @@ import java.time.LocalDate;
  * Created by jt on 7/25/18.
  */
 @Component
+@Transactional
 public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
